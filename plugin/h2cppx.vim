@@ -26,7 +26,8 @@ else
 endif
 
 
-if(system(s:python_path . ' -c "import sys; print sys.version_info[0]"') != "2\n")
+"if(system(s:python_path . ' -c "import sys; print sys.version_info[0]"') != "2\n")
+if(!has('python') && !has('python3'))
     echohl WarningMsg | echomsg "load h2cppx faild,python2.x is must need for h2cppx." | echohl None
     finish
 endif
